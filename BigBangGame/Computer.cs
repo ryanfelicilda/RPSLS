@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    class Computer
+    class Computer : Player
     {
 
         //member variables (Has a)

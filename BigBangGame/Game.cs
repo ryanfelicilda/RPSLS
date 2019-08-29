@@ -10,21 +10,29 @@ namespace BigBangGame
     {
 
         //member variables (Has a)
-        public string playerOne;
-        public string playerTwo;
+        public Player playerOne;
+        public Player playerTwo;
+        public string index;
         public int keepScore = 0;
         public bool winLose;
-
-
-        
 
         //constructor (Spawner)
         public Game()
         {
-                
+            
         }
 
         //member methods (Can do)
-        public void 
+        public void Win()
+        {
+            winLose = true;
+        }
+
+        public void ScorePoint()
+        {
+            keepScore++;
+        }
+
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    class Human
+    class Human : Player
     {
 
         //member variables (Has a)
