@@ -8,18 +8,21 @@ namespace BigBangGame
 {
     public class Computer : Player
     {
+        public override void ChooseGesture()
+        {
+
+            //enter logic
+
+        }
+
+        public override void ChooseName()
+        {
+            name = "Sheldon";
+        }
 
         //member variables (Has a)
 
         //constructor (Spawner)
-        //public overide void ChooseGesture();
-            //random logic
- 
-
-        //public overiide void ChooseName();
-            //{
-            //name = "Sheldon";
-            //}
 
         //member methods (Can do)
 

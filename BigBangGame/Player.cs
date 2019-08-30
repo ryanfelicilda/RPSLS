@@ -14,6 +14,7 @@ namespace BigBangGame
         public string gesture;
         public int score = 0;
 
+
         public List<string> gestureChoices;
 
 
@@ -28,18 +29,18 @@ namespace BigBangGame
             gestureChoices.Add("Spock");
         }
 
-        public string ChooseName()
+        public virtual void ChooseName()
         {
             Console.WriteLine("Enter your name.");
             name = Console.ReadLine();
-            return name;
+            //return name;
         }
 
-        public string ChooseGesture()
+        public virtual void ChooseGesture()
         {
             Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?");
             gesture = Console.ReadLine();
-            return gesture;
+            //return gesture;
         }
 
         public void ScorePoint()

@@ -12,15 +12,6 @@ namespace BigBangGame
         //member variables (Has a)
 
         //constructor (Spawner)
-        //public overide void ChooseGesture();
-        //console.writeLine("Choose a gesture")
-        //gesture = console.ReadLine();
-
-        //public overiide void ChooseName();
-        //{
-        //console.WriteLine("Enter your name")
-        //name = console.ReadLine();
-        //}
 
         //member methods (Can do)
     }
