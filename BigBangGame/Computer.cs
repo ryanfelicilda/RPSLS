@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    class Computer : Player
+    public class Computer : Player
     {
 
         //member variables (Has a)
 
         //constructor (Spawner)
-        public Computer()
-        {
+        //public overide void ChooseGesture();
+            //random logic
+ 
 
-        }
+        //public overiide void ChooseName();
+            //{
+            //name = "Sheldon";
+            //}
 
         //member methods (Can do)
 

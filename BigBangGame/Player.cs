@@ -6,36 +6,51 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    class Player
+    public class Player
     {
 
         //member variables (Has a)
+        public string name;
         public string gesture;
+        public int score = 0;
+
+        public List<string> gestureChoices;
 
 
         //constructor (Spawner)
-
-
         public Player()
         {
-            List<string> gestures = new List<string>();
-            gestures.Add("Rock");
-            gestures.Add("Paper");
-            gestures.Add("Scissors");
-            gestures.Add("Lizard");
-            gestures.Add("Spock");
+            gestureChoices = new List<string>();
+            gestureChoices.Add("Rock");
+            gestureChoices.Add("Paper");
+            gestureChoices.Add("Scissors");
+            gestureChoices.Add("Lizard");
+            gestureChoices.Add("Spock");
         }
 
-        //member methods (Can do)
-        public void chooseGesture()
+        public string ChooseName()
+        {
+            Console.WriteLine("Enter your name.");
+            name = Console.ReadLine();
+            return name;
+        }
+
+        public string ChooseGesture()
         {
             Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?");
-            string newGesture = Console.ReadLine();
-            gesture = newGesture;
+            gesture = Console.ReadLine();
+            return gesture;
         }
 
-        
-       
+        public void ScorePoint()
+        {
+            score++;
+        }
+        //member methods (Can do)
+
+
+
+
 
 
     }
