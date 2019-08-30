@@ -36,11 +36,12 @@ namespace BigBangGame
             //return name;
         }
 
-        public virtual void ChooseGesture()
+        public virtual string ChooseGesture()
         {
             Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?");
             gesture = Console.ReadLine().ToLower();
-            //return gesture;
+            Console.Clear();
+            return gesture;
         }
 
         public void ScorePoint()

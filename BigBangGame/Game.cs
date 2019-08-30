@@ -63,10 +63,12 @@ namespace BigBangGame
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
                 CompareGesture();
+
             }
 
             GameScore();
-            RepeatGame();
+            var playAgain = RepeatGame();
+            PlayAgainAnswer(playAgain);
             
         }
         public void CompareGesture()
@@ -106,12 +108,12 @@ namespace BigBangGame
 
         public string RepeatGame()
         {
-            Console.WriteLine("Would you like to play again?");
+            Console.WriteLine("Would you like to play again? Enter 'yes' or 'no'");
             playAgain = Console.ReadLine().ToLower();
             return playAgain;
         }
 
-        public void PlayAgainAnswer()
+        public void PlayAgainAnswer(string playAgain)
         {
             if(playAgain == "yes")
             {

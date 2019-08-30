@@ -8,11 +8,11 @@ namespace BigBangGame
 {
     public class Computer : Player
     {
-        public override void ChooseGesture()
+        public override string ChooseGesture()
         {
 
             //enter logic
-
+            return "";
         }
 
         public override void ChooseName()
