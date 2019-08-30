@@ -31,14 +31,14 @@ namespace BigBangGame
 
         public virtual void ChooseName()
         {
-            Console.WriteLine("Enter your name.");
+            Console.WriteLine("Enter your name.\n");
             name = Console.ReadLine();
             //return name;
         }
 
         public virtual string ChooseGesture()
         {
-            Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?");
+            Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?\n");
             gesture = Console.ReadLine().ToLower();
             Console.Clear();
             return gesture;
