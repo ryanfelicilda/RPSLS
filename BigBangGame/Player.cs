@@ -39,7 +39,7 @@ namespace BigBangGame
         public virtual void ChooseGesture()
         {
             Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?");
-            gesture = Console.ReadLine();
+            gesture = Console.ReadLine().ToLower();
             //return gesture;
         }
 
