@@ -13,7 +13,7 @@ namespace BigBangGame
         public string name;
         public string gesture;
         public int score = 0;
-
+        //public List<string> gestureChoices = new List<string>() {"Rock", "Paper", "Scissors", "Lizard", "Spock"};
 
         public List<string> gestureChoices;
 
@@ -36,12 +36,11 @@ namespace BigBangGame
             //return name;
         }
 
-        public virtual string ChooseGesture()
+        public virtual void ChooseGesture()
         {
-            Console.WriteLine("'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'?\n");
+            Console.WriteLine("\n{0}, choose Rock, Paper, Scissors, Lizard, Spock?", name);
             gesture = Console.ReadLine().ToLower();
-            Console.Clear();
-            return gesture;
+            //return gesture;
         }
 
         public void ScorePoint()
@@ -49,7 +48,10 @@ namespace BigBangGame
             score++;
         }
         //member methods (Can do)
-
+        public void playerNames()
+        {
+            Console.WriteLine();
+        }
 
 
 

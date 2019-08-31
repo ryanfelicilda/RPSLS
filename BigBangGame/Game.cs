@@ -73,36 +73,45 @@ namespace BigBangGame
         }
         public void CompareGesture()
         {
-            if ((playerOne.gesture == "Rock" && playerTwo.gesture == "Scissors" || playerOne.gesture == "Rock" && playerTwo.gesture == "Lizard") ||
-                (playerOne.gesture == "Scissor" && playerTwo.gesture == "Paper" || playerOne.gesture == "Scissor" && playerTwo.gesture == "Lizard") ||
-                (playerOne.gesture == "Paper" && playerTwo.gesture == "Rock" || playerOne.gesture == "Paper" && playerTwo.gesture == "Spock") ||
-                (playerOne.gesture == "Lizard" && playerTwo.gesture == "Paper" || playerOne.gesture == "Lizard" && playerTwo.gesture == "Spock") ||
-                (playerOne.gesture == "Spock" && playerTwo.gesture == "Scissor" || playerOne.gesture == "Spock" && playerTwo.gesture == "Rock") == true)
+            if ((playerOne.gesture.ToLower() == "Rock" && playerTwo.gesture.ToLower() == "Scissors" || playerOne.gesture.ToLower() == "Rock" && playerTwo.gesture.ToLower() == "Lizard") ||
+                (playerOne.gesture.ToLower() == "Scissors" && playerTwo.gesture.ToLower() == "Paper" || playerOne.gesture.ToLower() == "Scissors" && playerTwo.gesture.ToLower() == "Lizard") ||
+                (playerOne.gesture.ToLower() == "Paper" && playerTwo.gesture.ToLower() == "Rock" || playerOne.gesture.ToLower() == "Paper" && playerTwo.gesture.ToLower() == "Spock") ||
+                (playerOne.gesture.ToLower() == "Lizard" && playerTwo.gesture.ToLower() == "Paper" || playerOne.gesture.ToLower() == "Lizard" && playerTwo.gesture.ToLower() == "Spock") ||
+                (playerOne.gesture.ToLower() == "Spock" && playerTwo.gesture.ToLower() == "Scissors" || playerOne.gesture.ToLower() == "Spock" && playerTwo.gesture.ToLower() == "Rock") == true)
             {
-                Console.WriteLine("You Win!\n");
+                Console.WriteLine("{0} win!\n", playerOne.name);
                 playerOne.score++;
             }
-            else if (playerOne.gesture == playerTwo.gesture)
+            else if (playerOne.gesture.ToLower() == playerTwo.gesture.ToLower())
             {
                 Console.WriteLine("It's a tie!\n");
             }
             else
             {
-                Console.WriteLine("Bazinga!\n");
+                Console.WriteLine("{0} win!\n", playerTwo.name);
                 playerTwo.score++;
             }
 
         }
 
+        //public void CompareGesture()
+        //{
+        //    Console.WriteLine();
+        //    switch (playerOne.gestureChoices)
+        //    {
+        //        case 1 = "Rock"
+        //    }
+        //}
+
         public void GameScore()
         {
             if (playerOne.score == 2)
             {
-                Console.WriteLine("Player 1 Wins!!!\n");
+                Console.WriteLine("{0} wins the game!!!\n", playerOne.name);
             }
             else if (playerTwo.score == 2)
             {
-                Console.WriteLine("Player 2 Wins!!!\n");
+                Console.WriteLine("{0} wins the game!!!\n", playerTwo.name);
             }
         }
 
@@ -115,11 +124,11 @@ namespace BigBangGame
 
         public void PlayAgainAnswer(string playAgain)
         {
-            if(playAgain == "yes\n")
+            if(playAgain == "yes")
             {
                 RunGame();
             }
-            else if(playAgain == "no\n")
+            else if(playAgain == "no")
             {
                 Console.WriteLine("Goodbye, and if there’s an apocalypse, good luck.");
                 Console.ReadLine();
@@ -127,7 +136,7 @@ namespace BigBangGame
             else
             {
                 Console.WriteLine("Invalid input. Goodbye, and if there's an apocalypes, good luck.");
-                Console.ReadLine();
+                RepeatGame();
             }
         }
 

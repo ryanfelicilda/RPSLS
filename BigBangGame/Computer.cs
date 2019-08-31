@@ -8,11 +8,11 @@ namespace BigBangGame
 {
     public class Computer : Player
     {
-        public override string ChooseGesture()
+        public override void ChooseGesture()
         {
-
-            //enter logic
-            return "";
+            //Random random = new Random();
+            //int computerChoice = random.Next(1, 6);//randomly generates the computers choice
+            //string cpuString = computerChoice.ToString();
         }
 
         public override void ChooseName()
