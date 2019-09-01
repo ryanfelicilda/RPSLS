@@ -6,55 +6,46 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    class Game
+    public class Game
     {
-
-        //member variables (Has a)
-        public Player playerOne;
-        public Player playerTwo;
-        public int numberOfPlayers;
-        public string playAgain;
-
-
+        Player playerOne;
+        Player playerTwo;
+        public int score = 0;
 
         public int GetNumberOfPlayers()
         {
             Console.WriteLine("One Player or Two Player? Enter 1 or 2.\n");
-            numberOfPlayers = int.Parse(Console.ReadLine());
+            int numberOfPlayers = int.Parse(Console.ReadLine());
             return numberOfPlayers;
-
         }
 
-        public void CreatePlayer(int number)
+        public void CreatePlayers(int number)
         {
-            if(number == 1)
+
+            if (number == 1)
             {
                 playerOne = new Human();
                 playerTwo = new Computer();
             }
-            else if(number == 2)
+            else if (number == 2)
             {
                 playerOne = new Human();
                 playerTwo = new Human();
             }
             else
             {
-                Console.WriteLine("One cries because one is sad. I cry because others are stupid and that makes me sad.\n Choose again.\n");
+                Console.WriteLine("One cries because one is sad.I cry because others are stupid and that makes me sad.\n Choose again.\n");
                 RunGame();
             }
-
         }
-        //constructor (Spawner)
         public Game()
         {
-            
-        }
 
-        //member methods (Can do)
+        }
         public void RunGame()
         {
-            int numOfPlayers = GetNumberOfPlayers();
-            CreatePlayer(numOfPlayers);
+            int numberOfPlayers = GetNumberOfPlayers();
+            CreatePlayers(numberOfPlayers);
             playerOne.ChooseName();
             playerTwo.ChooseName();
 
@@ -63,72 +54,52 @@ namespace BigBangGame
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
                 CompareGesture();
-
             }
-
             GameScore();
-            var playAgain = RepeatGame();
-            PlayAgainAnswer(playAgain);
-            
+            RepeatGameAnswer();
         }
         public void CompareGesture()
         {
-            if ((playerOne.gesture.ToLower() == "Rock" && playerTwo.gesture.ToLower() == "Scissors" || playerOne.gesture.ToLower() == "Rock" && playerTwo.gesture.ToLower() == "Lizard") ||
-                (playerOne.gesture.ToLower() == "Scissors" && playerTwo.gesture.ToLower() == "Paper" || playerOne.gesture.ToLower() == "Scissors" && playerTwo.gesture.ToLower() == "Lizard") ||
-                (playerOne.gesture.ToLower() == "Paper" && playerTwo.gesture.ToLower() == "Rock" || playerOne.gesture.ToLower() == "Paper" && playerTwo.gesture.ToLower() == "Spock") ||
-                (playerOne.gesture.ToLower() == "Lizard" && playerTwo.gesture.ToLower() == "Paper" || playerOne.gesture.ToLower() == "Lizard" && playerTwo.gesture.ToLower() == "Spock") ||
-                (playerOne.gesture.ToLower() == "Spock" && playerTwo.gesture.ToLower() == "Scissors" || playerOne.gesture.ToLower() == "Spock" && playerTwo.gesture.ToLower() == "Rock") == true)
+            if ((playerOne.PlayerChoice == "Rock" && playerTwo.PlayerChoice == "Scissors" || playerOne.PlayerChoice == "Rock" && playerTwo.PlayerChoice == "Lizard") ||
+              (playerOne.PlayerChoice == "Scissors" && playerTwo.PlayerChoice == "Paper" || playerOne.PlayerChoice == "Scissors" && playerTwo.PlayerChoice == "Lizard") ||
+              (playerOne.PlayerChoice == "Paper" && playerTwo.PlayerChoice == "Rock" || playerOne.PlayerChoice == "Paper" && playerTwo.PlayerChoice == "Spock") ||
+              (playerOne.PlayerChoice == "Lizard" && playerTwo.PlayerChoice == "Paper" || playerOne.PlayerChoice == "Lizard" && playerTwo.PlayerChoice == "Spock") ||
+              (playerOne.PlayerChoice == "Spock" && playerTwo.PlayerChoice == "Scissors" || playerOne.PlayerChoice == "Spock" && playerTwo.PlayerChoice == "Rock") == true)
             {
-                Console.WriteLine("{0} win!\n", playerOne.name);
+                Console.WriteLine(playerOne.name + "\nWins!\n");
                 playerOne.score++;
             }
-            else if (playerOne.gesture.ToLower() == playerTwo.gesture.ToLower())
+            else if (playerOne.PlayerChoice == playerTwo.PlayerChoice)
             {
-                Console.WriteLine("It's a tie!\n");
+                Console.WriteLine("\nIt's a tie!\n");
             }
             else
             {
-                Console.WriteLine("{0} win!\n", playerTwo.name);
+                Console.WriteLine(playerTwo.name + "\nWins!\n");
                 playerTwo.score++;
             }
-
         }
-
-        //public void CompareGesture()
-        //{
-        //    Console.WriteLine();
-        //    switch (playerOne.gestureChoices)
-        //    {
-        //        case 1 = "Rock"
-        //    }
-        //}
-
         public void GameScore()
         {
             if (playerOne.score == 2)
             {
-                Console.WriteLine("{0} wins the game!!!\n", playerOne.name);
+                Console.WriteLine(playerOne.name + "\nWins the game!");
             }
             else if (playerTwo.score == 2)
             {
-                Console.WriteLine("{0} wins the game!!!\n", playerTwo.name);
+                Console.WriteLine(playerTwo.name + "\nWins the game!");
             }
         }
-
-        public string RepeatGame()
+        public void RepeatGameAnswer()
         {
-            Console.WriteLine("Would you like to play again? Enter 'yes' or 'no'\n");
-            playAgain = Console.ReadLine().ToLower();
-            return playAgain;
-        }
+            Console.WriteLine("Would you like to play again? Enter (Y) yes or (N) no\n");
+            string answer = Console.ReadLine().ToLower();
 
-        public void PlayAgainAnswer(string playAgain)
-        {
-            if(playAgain == "yes")
+            if (answer == "y")
             {
                 RunGame();
             }
-            else if(playAgain == "no")
+            else if (answer == "n")
             {
                 Console.WriteLine("Goodbye, and if there’s an apocalypse, good luck.");
                 Console.ReadLine();
@@ -136,9 +107,9 @@ namespace BigBangGame
             else
             {
                 Console.WriteLine("Invalid input. Goodbye, and if there's an apocalypes, good luck.");
-                RepeatGame();
+                RepeatGameAnswer();
             }
-        }
 
+        }
     }
 }

@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    public class Human : Player
+    class Human : Player
     {
-
-        //member variables (Has a)
-
-        //constructor (Spawner)
-
-        //member methods (Can do)
+        public override void ChooseName()
+        {
+            Console.WriteLine("\nEnter your name?\n");
+            name = Console.ReadLine();
+        }
+        public override void ChooseGesture()
+        {
+            Console.WriteLine("\n" + name + " choose (1) Rock, (2) Paper, (3) Scissors, (4) Lizard, (5) Spock?\n");
+            int choice = int.Parse(Console.ReadLine());
+            PlayerChoice = gesture[choice - 1];
+            Console.Clear();
+        }
     }
+
+
+
 }

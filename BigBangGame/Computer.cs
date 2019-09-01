@@ -6,25 +6,18 @@ using System.Threading.Tasks;
 
 namespace BigBangGame
 {
-    public class Computer : Player
-    {
-        public override void ChooseGesture()
+        class Computer : Player
         {
-            //Random random = new Random();
-            //int computerChoice = random.Next(1, 6);//randomly generates the computers choice
-            //string cpuString = computerChoice.ToString();
+            public override void ChooseGesture()
+            {
+                Console.WriteLine("Sheldon");
+                Random random = new Random();
+                int computerChoice = random.Next(1, 6);
+                PlayerChoice = computerChoice.ToString();
+            }
+            public override void ChooseName()
+            {
+                Console.WriteLine("\nHello, I'm Dr. Sheldon Cooper. I'm exceedingly smart. I graduated college at 14. Good luck trying to beat me.\n");
+            }
         }
-
-        public override void ChooseName()
-        {
-            name = "Sheldon";
-        }
-
-        //member variables (Has a)
-
-        //constructor (Spawner)
-
-        //member methods (Can do)
-
-    }
 }
