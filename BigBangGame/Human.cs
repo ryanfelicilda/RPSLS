@@ -17,7 +17,7 @@ namespace BigBangGame
         {
             Console.WriteLine("\n" + name + " choose (1) Rock, (2) Paper, (3) Scissors, (4) Lizard, (5) Spock?\n");
             int choice = int.Parse(Console.ReadLine());
-            PlayerChoice = gesture[choice - 1];
+            playerGesture = gesture[choice - 1];
             Console.Clear();
         }
     }

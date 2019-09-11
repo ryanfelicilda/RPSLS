@@ -60,16 +60,16 @@ namespace BigBangGame
         }
         public void CompareGesture()
         {
-            if ((playerOne.PlayerChoice == "Rock" && playerTwo.PlayerChoice == "Scissors" || playerOne.PlayerChoice == "Rock" && playerTwo.PlayerChoice == "Lizard") ||
-              (playerOne.PlayerChoice == "Scissors" && playerTwo.PlayerChoice == "Paper" || playerOne.PlayerChoice == "Scissors" && playerTwo.PlayerChoice == "Lizard") ||
-              (playerOne.PlayerChoice == "Paper" && playerTwo.PlayerChoice == "Rock" || playerOne.PlayerChoice == "Paper" && playerTwo.PlayerChoice == "Spock") ||
-              (playerOne.PlayerChoice == "Lizard" && playerTwo.PlayerChoice == "Paper" || playerOne.PlayerChoice == "Lizard" && playerTwo.PlayerChoice == "Spock") ||
-              (playerOne.PlayerChoice == "Spock" && playerTwo.PlayerChoice == "Scissors" || playerOne.PlayerChoice == "Spock" && playerTwo.PlayerChoice == "Rock") == true)
+            if ((playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Scissors" || playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Lizard") ||
+              (playerOne.playerGesture == "Scissors" && playerTwo.playerGesture == "Paper" || playerOne.playerGesture == "Scissors" && playerTwo.playerGesture == "Lizard") ||
+              (playerOne.playerGesture == "Paper" && playerTwo.playerGesture == "Rock" || playerOne.playerGesture == "Paper" && playerTwo.playerGesture == "Spock") ||
+              (playerOne.playerGesture == "Lizard" && playerTwo.playerGesture == "Paper" || playerOne.playerGesture == "Lizard" && playerTwo.playerGesture == "Spock") ||
+              (playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Scissors" || playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Rock") == true)
             {
                 Console.WriteLine(playerOne.name + "\nWins!\n");
                 playerOne.score++;
             }
-            else if (playerOne.PlayerChoice == playerTwo.PlayerChoice)
+            else if (playerOne.playerGesture == playerTwo.playerGesture)
             {
                 Console.WriteLine("\nIt's a tie!\n");
             }

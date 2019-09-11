@@ -9,7 +9,7 @@ namespace BigBangGame
     public abstract class Player
     {
         public string name;
-        public string PlayerChoice;
+        public string playerGesture;
         public int score = 0;
         public List<string> gesture = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
         

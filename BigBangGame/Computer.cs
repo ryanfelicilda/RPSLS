@@ -11,10 +11,11 @@ namespace BigBangGame
             public override void ChooseGesture()
             {
                 Console.WriteLine("Sheldon");
-                Random random = new Random();
-                int computerChoice = random.Next(1, 6);
-                PlayerChoice = computerChoice.ToString();
-            }
+                var random = new Random();
+                var list = new List<string> { };
+                int sheldonGesture = random.Next(gesture.Count);
+                playerGesture = gesture[sheldonGesture];
+        }
             public override void ChooseName()
             {
                 Console.WriteLine("\nHello, I'm Dr. Sheldon Cooper. I'm exceedingly smart. I graduated college at 14. Good luck trying to beat me.\n");
